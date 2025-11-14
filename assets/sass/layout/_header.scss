@@ -1,0 +1,260 @@
+@use "../abstrats/mixins" as *;
+
+ header {
+  margin-bottom: 150px;
+  background-color: #0f0f0f;
+  backdrop-filter: blur(12px);
+  background-image: linear-gradient(
+      360deg,
+      rgba(15, 15, 15, 0) 0%,
+      #0f0f0f 100%
+    ),
+    url(../../assets/images/img/header-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .header__wrapper {
+    padding: 21px 0;
+    margin-bottom: 88px;
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .nav__logo img {
+        width: 100%;
+      }
+
+      .nav__links {
+        display: flex;
+        gap: 24px;
+
+        &--item a {
+          font-size: 14px;
+          color: #fff;
+          transition: 0.3s;
+
+          &:hover {
+            padding: 12px 16px;
+            border-radius: 84px;
+            background: #1a1a1a;
+            border: 1px solid #1f1f1f;
+          }
+        }
+      }
+    }
+
+    .nav-menu {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    .header__wrapper {
+      width: 95%;
+      margin: 0 auto;
+    }
+  }
+
+
+  @media screen and (max-width: 1024px) {
+    .header__wrapper {
+      width: 100%;
+      padding: 16px 24px;
+
+      nav .nav__links {
+        gap: 16px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .header__wrapper {
+      padding: 16px 20px;
+
+      nav .nav__links {
+        display: none;
+      }
+
+      .nav-menu {
+        display: flex;
+      }
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .header__wrapper {
+      padding: 14px 16px;
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+    .header__wrapper {
+      padding: 12px 0;
+      margin-bottom: 40px;
+
+      nav .nav__links {
+        display: none;
+      }
+
+      .nav-menu {
+        display: flex;
+      }
+    }
+  }
+}
+
+main {
+  .main__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+
+    &--info {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      h1,
+      span {
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 130%;
+        color: #ffffff;
+
+        span {
+          color: #666666;
+        }
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #808080;
+      }
+
+      .main__wrapper--btn {
+        display: flex;
+        gap: 8px;
+
+        button {
+          @include button;
+        }
+      }
+    }
+  }
+
+  .main__wrapper--img {
+    img {
+      width: 720px;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .main__wrapper {
+      gap: 40px;
+
+      &--info {
+        h1,
+        span {
+          font-size: 36px;
+        }
+      }
+
+      .main__wrapper--img img {
+        width: 500px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .main__wrapper {
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: 30px;
+
+      &--info {
+        h1,
+        span {
+          font-size: 32px;
+        }
+      }
+
+      .main__wrapper--btn {
+        justify-content: center;
+      }
+
+      .main__wrapper--img img {
+        width: 80%;
+      }
+    }
+  }
+
+
+  @media (max-width: 576px) {
+    .main__wrapper {
+      width: 95%;
+      gap: 25px;
+
+      &--info {
+        h1,
+        span {
+          font-size: 28px;
+        }
+
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .main__wrapper--img img {
+      width: 90%;
+    }
+  }
+
+
+  @media (max-width: 390px) {
+    .main__wrapper {
+      width: 95%;
+      flex-direction: column-reverse;
+      gap: 20px;
+
+      &--info {
+        width: 100%;
+        text-align: center;
+        gap: 15px;
+
+        h1,
+        span {
+          font-size: 24px;
+
+          span {
+            color: #666666;
+          }
+        }
+
+        p {
+          font-size: 14px;
+        }
+
+        .main__wrapper--btn {
+          flex-direction: column;
+          gap: 8px;
+
+          button {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .main__wrapper--img img {
+      width: 95%;
+    }
+  }
+}

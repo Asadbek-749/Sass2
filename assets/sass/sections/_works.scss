@@ -1,0 +1,221 @@
+@use "../abstrats/mixins" as *;
+
+.works {
+  margin-bottom: 150px;
+
+  .works-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    align-items: center;
+
+    &__title {
+      h2 {
+        @include section-title;
+      }
+
+      p {
+        @include section-desc;
+      }
+    }
+
+    .works-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-items: center;
+
+      .works-card {
+        position: relative;
+        width: 773px;
+        height: 806px;
+        border-radius: 20px;
+        padding: 50px;
+        background: linear-gradient(
+          180deg,
+          #1a1a1a -26.18%,
+          rgba(26, 26, 26, 0) 59.52%
+        );
+        border: 1px solid #262626;
+        display: flex;
+        flex-direction: column;
+        gap: 76px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+
+        &__logo img {
+          width: 100%;
+          height: auto;
+        }
+
+        &__info {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+
+          h3 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 150%;
+            color: #ffffff;
+          }
+
+          p {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 150%;
+            color: #8c8c8c;
+
+            span {
+              color: #ffffff;
+            }
+          }
+        }
+
+        .works-card-link a {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          padding: 18px 24px;
+          border-radius: 74px;
+          background: #1a1a1a33;
+          border: 1px solid #262626;
+          backdrop-filter: blur(12px);
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 150%;
+          color: #ffffff;
+          transition: all 0.3s ease-in;
+
+          &:hover {
+            color: goldenrod;
+          }
+        }
+      }
+    }
+
+    &__link a {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 18px 24px;
+      border-radius: 74px;
+      background: #1a1a1a33;
+      border: 1px solid #262626;
+      backdrop-filter: blur(12px);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+      color: #ffffff;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.08);
+        color: goldenrod;
+      }
+    }
+  }
+
+
+  @media screen and (max-width: 1280px) {
+    margin-bottom: 130px;
+
+    .works-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .works-card {
+      width: 650px;
+      padding: 40px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .works-cards {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .works-card {
+      width: 500px;
+      padding: 35px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 120px;
+
+    .works-card {
+      width: 85%;
+      padding: 30px;
+    }
+
+    .works-wrapper__title h2 {
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .works-wrapper__title p {
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .works-card {
+      width: 70%;
+      padding: 25px;
+    }
+
+    .works-wrapper__title h2 {
+      font-size: 24px;
+    }
+
+    .works-wrapper__title p {
+      font-size: 13px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .works-card {
+      width: 60%;
+      padding: 20px;
+    }
+
+    .works-wrapper__title h2 {
+      font-size: 22px;
+    }
+
+    .works-wrapper__title p {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+    .works-card {
+      width: 50%;
+      padding: 15px;
+    }
+
+    .works-wrapper__title h2 {
+      font-size: 20px;
+    }
+
+    .works-wrapper__title p {
+      font-size: 11px;
+    }
+
+    .works-card-link a {
+      padding: 14px 18px;
+      font-size: 16px;
+    }
+  }
+}
+
+

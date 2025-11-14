@@ -1,0 +1,115 @@
+footer {
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 30px;
+      border-bottom-width: 1px;
+      border-bottom: 1px solid #1f1f1f;
+
+      &__social {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        p {
+          font-weight: 400;
+          font-style: Regular;
+          font-size: 18px;
+          line-height: 24px;
+          letter-spacing: -0.6%;
+          color: #fff;
+        }
+        .top-social-img {
+          display: flex;
+          gap: 14px;
+          align-items: center;
+
+          img {
+            transition: all 0.3s ease;
+            &:hover {
+                transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+
+    .footer-center {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 50px;
+      padding: 60px 0;
+
+      .footer-column {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        h3 {
+          font-weight: 600;
+          font-style: SemiBold;
+          font-size: 18px;
+          line-height: 150%;
+          color: #ffffff;
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+
+          li {
+            list-style: none;
+
+            a {
+              font-weight: 400;
+              font-style: Regular;
+              font-size: 18px;
+              line-height: 150%;
+              color: #808080;
+              font-family: Sora;
+              cursor: pointer;
+              transition: 0.3s ease;
+
+              &:hover {
+                color: #fff;
+                padding-left: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .footer-bottom {
+      padding: 30px 0;
+      border-top-width: 1px;
+      border-top: 1px solid #1f1f1f;
+      display: flex;
+      justify-content: space-between;
+      p {
+        font-weight: 300;
+        font-style: Light;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.6%;
+        color: #666666;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: #ffffff;
+            cursor: pointer;
+        }
+      }
+
+      &__right {
+        display: flex;
+        gap: 20px;
+      }
+    }
+  }
+}

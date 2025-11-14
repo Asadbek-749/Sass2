@@ -1,0 +1,52 @@
+// _mixins.scss
+@mixin button(
+  $bg: #1a1a1a,
+  $color: #ffffff,
+  $border: #262626,
+  $hover-bg: #ffffff,
+  $hover-color: #1a1a1a
+) {
+  padding: 18px 24px;
+  border-radius: 56px;
+  background: $bg;
+  border: 1px solid $border;
+  color: $color;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 150%;
+  transition: all 0.5s ease;
+
+  &:hover {
+    background: $hover-bg;
+    color: $hover-color;
+  }
+}
+
+// Section title uchun
+@mixin section-title(
+  $title-size: 48px,
+  $title-color: #ffffff,
+  $highlight-color: #666666
+) {
+  font-size: $title-size;
+  font-weight: 600;
+  color: $title-color;
+  line-height: 150%;
+  text-align: center;
+
+  span {
+    margin-right: 15px;
+    color: $highlight-color;
+  }
+}
+
+@mixin section-desc($size: 18px, $color: #808080) {
+  font-size: $size;
+  color: $color;
+  line-height: 160%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}

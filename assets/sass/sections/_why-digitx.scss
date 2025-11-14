@@ -1,0 +1,133 @@
+@use "../abstrats/mixins" as *;
+
+.why__digitx {
+  margin-bottom: 150px;
+
+  &--wrapper {
+    .why__digitx--title {
+      h2 {
+        @include section-title;
+      }
+
+      p {
+        @include section-desc;
+      }
+    }
+
+    .why-digitx {
+      &__cards {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 100px;
+      }
+
+      &__card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 466px;
+        gap: 50px;
+      }
+
+      &__img img {
+        width: 92px;
+        height: 92px;
+      }
+
+      &__info {
+        margin-bottom: 20px;
+      }
+
+      &__title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #ffffff;
+        text-align: center;
+      }
+
+      &__desc {
+        font-size: 18px;
+        font-weight: 400;
+        color: #8c8c8c;
+        line-height: 150%;
+        text-align: center;
+      }
+
+      &__link a {
+        border-radius: 100px;
+        border: 1px solid #1f1f1f;
+        padding: 18px;
+        display: inline-flex;
+        align-items: center;
+        gap: 30px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          color: goldenrod;
+        }
+
+        .why-digitx__icon {
+          padding: 10px 20px;
+          border-radius: 135px;
+          background: #1a1a1a;
+
+          img {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    .why__digitx {
+      margin-bottom: 100px;
+
+      &--wrapper {
+        .why__digitx--title {
+          h2 {
+            font-size: 42px;
+          }
+
+          p {
+            font-size: 22px;
+          }
+        }
+        .why-digitx {
+          &__cards {
+            grid-template-columns: auto auto;
+            gap: 70px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .why__digitx {
+      margin-bottom: 100px;
+
+      &--wrapper {
+        .why-digitx {
+          &__cards {
+            grid-template-columns: auto;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 390px) {
+    .why__digitx {
+      margin-bottom: 100px;
+
+      &--wrapper {
+        padding: 0 50px;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Sora", sans-serif;
+  background-color: #0f0f0f;
+}
+
+.container {
+  max-width: 1596px;
+  width: 100%;
+  margin: 0 auto;
+
+
+  @media screen and (max-width: 1440px) {
+    padding: 0 100px;
+  }
+
+
+  @media screen and (max-width: 1280px) {
+    padding: 0 80px;
+  }
+
+
+  @media screen and (max-width: 1024px) {
+    padding: 0 60px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0 40px;
+  }
+
+
+  @media screen and (max-width: 576px) {
+    padding: 0 20px;
+  }
+
+
+  @media screen and (max-width: 480px) {
+    padding: 0 15px;
+  }
+
+
+  @media screen and (max-width: 390px) {
+    padding: 0 10px;
+  }
+}
+
+button {
+  border: none;
+  outline: none;
+}

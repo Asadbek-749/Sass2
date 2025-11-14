@@ -1,0 +1,45 @@
+@use "../abstrats/mixins" as *;
+.cta {
+  margin-bottom: 150px;
+
+  .cta-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__title {
+      margin-bottom: 25px;
+      h2 {
+        @include section-title;
+      }
+
+      p {
+        @include section-desc;
+      }
+    }
+
+    &__center {
+        margin-bottom: 80px;
+      h4 {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 150%;
+        text-align: center;
+        color: #fff;
+        padding-bottom: 20px;
+      }
+      button {
+        @include button;
+        @include button;
+      }
+    }
+
+    &__img {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

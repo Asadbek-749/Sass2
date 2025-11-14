@@ -1,0 +1,273 @@
+@use "../abstrats/mixins" as *;
+.questions {
+  margin-bottom: 150px;
+
+  .questions-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    &__title {
+      h2 {
+        @include section-title;
+      }
+
+      p {
+        @include section-desc;
+      }
+    }
+
+    &__search {
+      display: flex;
+      align-items: center;
+      background: #1a1a1a;
+      border: 1px solid #262626;
+      border-radius: 56px;
+      padding: 18px 24px;
+      width: 100%;
+      margin: 0 auto;
+      max-width: 434px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+
+      &:focus-within {
+        border-color: #ffffff;
+      }
+
+      .search-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+      }
+
+      input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #ffffff;
+        font-size: 16px;
+
+        &::placeholder {
+          color: #808080;
+        }
+      }
+
+      button {
+        background: #ffffff;
+        color: #1a1a1a;
+        border: none;
+        border-radius: 40px;
+        padding: 8px 20px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: #cccccc;
+        }
+      }
+    }
+  }
+
+
+  @media screen and (max-width: 1280px) {
+    margin-bottom: 130px;
+
+    .questions-wrapper__title h2 {
+      font-size: 32px;
+    }
+
+    .questions-wrapper__title p {
+      font-size: 16px;
+    }
+
+    .questions-wrapper__search {
+      max-width: 400px;
+      padding: 16px 20px;
+
+      input {
+        font-size: 15px;
+      }
+
+      button {
+        padding: 7px 18px;
+        font-size: 15px;
+      }
+
+      .search-icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 120px;
+
+    .questions-wrapper__title h2 {
+      font-size: 28px;
+    }
+
+    .questions-wrapper__title p {
+      font-size: 14px;
+    }
+
+    .questions-wrapper__search {
+      max-width: 360px;
+      padding: 14px 18px;
+
+      input {
+        font-size: 14px;
+      }
+
+      button {
+        padding: 6px 16px;
+        font-size: 14px;
+      }
+
+      .search-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 110px;
+
+    .questions-wrapper__title h2 {
+      font-size: 26px;
+      text-align: center;
+    }
+
+    .questions-wrapper__title p {
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .questions-wrapper__search {
+      max-width: 320px;
+      padding: 12px 16px;
+
+      input {
+        font-size: 14px;
+      }
+
+      button {
+        padding: 6px 14px;
+        font-size: 14px;
+      }
+
+      .search-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+
+  @media screen and (max-width: 576px) {
+    margin-bottom: 100px;
+
+    .questions-wrapper__title h2 {
+      font-size: 24px;
+    }
+
+    .questions-wrapper__title p {
+      font-size: 12px;
+    }
+
+    .questions-wrapper__search {
+      max-width: 280px;
+      padding: 10px 12px;
+
+      input {
+        font-size: 13px;
+      }
+
+      button {
+        padding: 5px 12px;
+        font-size: 13px;
+      }
+
+      .search-icon {
+        width: 14px;
+        height: 14px;
+        margin-right: 6px;
+      }
+    }
+  }
+
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: 90px;
+
+    .questions-wrapper__title h2 {
+      font-size: 22px;
+    }
+
+    .questions-wrapper__title p {
+      font-size: 11px;
+    }
+
+    .questions-wrapper__search {
+      max-width: 240px;
+      padding: 10px 10px;
+
+      input {
+        font-size: 12px;
+      }
+
+      button {
+        padding: 5px 10px;
+        font-size: 12px;
+      }
+
+      .search-icon {
+        width: 12px;
+        height: 12px;
+        margin-right: 6px;
+      }
+    }
+  }
+
+
+  @media screen and (max-width: 390px) {
+    margin-bottom: 80px;
+
+    .questions-wrapper__title h2 {
+      font-size: 20px;
+    }
+
+    .questions-wrapper__title p {
+      font-size: 10px;
+    }
+
+    .questions-wrapper__search {
+      max-width: 200px;
+      padding: 8px 8px;
+
+      input {
+        font-size: 12px;
+      }
+
+      button {
+        padding: 4px 8px;
+        font-size: 11px;
+      }
+
+      .search-icon {
+        width: 12px;
+        height: 12px;
+        margin-right: 4px;
+      }
+    }
+  }
+}
+
