@@ -16,18 +16,13 @@ body {
   max-width: 1598px;
   margin: 0 auto;
 
-  border: 1px solid red;
-  background: rgb(21, 21, 86);
-
   @include laptop() {
     max-width: 1280px;
-    background: red;
   }
 
   @include mobile() {
     max-width: 768px;
     padding: 16px;
-    background: green;
   }
 }
 

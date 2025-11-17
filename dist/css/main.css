@@ -14,20 +14,16 @@ body {
 .container {
   max-width: 1598px;
   margin: 0 auto;
-  border: 1px solid red;
-  background: rgb(21, 21, 86);
 }
 @media (min-width: 1320px) and (max-width: 1638px) {
   .container {
     max-width: 1280px;
-    background: red;
   }
 }
 @media (max-width: 1320px) {
   .container {
     max-width: 768px;
     padding: 16px;
-    background: green;
   }
 }
 
