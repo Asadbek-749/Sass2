@@ -1,4 +1,5 @@
 @use "../abstrats/mixins" as *;
+@use "../mixins/media-mixsins" as *;
 
 .why__digitx {
   margin-bottom: 150px;
@@ -17,7 +18,7 @@
     .why-digitx {
       &__cards {
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: repeat(3, 1fr);
         gap: 100px;
       }
 
@@ -25,7 +26,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 466px;
         gap: 50px;
       }
 
@@ -81,52 +81,54 @@
       }
     }
   }
+  @include laptop() {
+    &--wrapper {
+      padding: 0 16px;
 
-  @media screen and (max-width: 1280px) {
-    .why__digitx {
-      margin-bottom: 100px;
+      .why-digitx__cards {
+        gap: 40px;
+      }
 
-      &--wrapper {
-        .why__digitx--title {
-          h2 {
-            font-size: 42px;
-          }
-
-          p {
-            font-size: 22px;
-          }
-        }
-        .why-digitx {
-          &__cards {
-            grid-template-columns: auto auto;
-            gap: 70px;
-          }
-        }
+      .why-digitx__card {
+        gap: 25px;
       }
     }
   }
 
-  @media screen and (max-width: 768px) {
-    .why__digitx {
-      margin-bottom: 100px;
+  @include mobile() {
+    &--wrapper {
+      padding: 0 8px;
 
-      &--wrapper {
-        .why-digitx {
-          &__cards {
-            grid-template-columns: auto;
-            justify-content: center;
+      .why-digitx__cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .why-digitx__card {
+        gap: 15px;
+
+        &__title {
+          font-size: 20px;
+        }
+
+        &__desc {
+          font-size: 16px;
+        }
+
+        &__link a {
+          font-size: 14px;
+          padding: 12px;
+          gap: 20px;
+
+          .why-digitx__icon {
+            padding: 8px 16px;
+
+            img {
+              width: 20px;
+              height: 20px;
+            }
           }
         }
-      }
-    }
-  }
-
-  @media screen and (max-width: 390px) {
-    .why__digitx {
-      margin-bottom: 100px;
-
-      &--wrapper {
-        padding: 0 50px;
       }
     }
   }

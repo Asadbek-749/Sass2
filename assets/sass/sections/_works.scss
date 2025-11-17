@@ -1,9 +1,11 @@
 @use "../abstrats/mixins" as *;
+@use "../mixins/media-mixsins" as *;
 
 .works {
   margin-bottom: 150px;
 
   .works-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 80px;
@@ -20,15 +22,15 @@
     }
 
     .works-cards {
+      width: 100%;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: auto auto;
       gap: 20px;
       justify-items: center;
 
       .works-card {
+        width: 100%;
         position: relative;
-        width: 773px;
-        height: 806px;
         border-radius: 20px;
         padding: 50px;
         background: linear-gradient(
@@ -46,9 +48,10 @@
           transform: scale(1.02);
         }
 
-        &__logo img {
+        &__img > img {
+          max-width: 673px;
           width: 100%;
-          height: auto;
+          margin: 0 auto;
         }
 
         &__info {
@@ -120,102 +123,61 @@
       }
     }
   }
-
-
-  @media screen and (max-width: 1280px) {
-    margin-bottom: 130px;
+}
+@include laptop() {
+  .works-wrapper {
+    padding: 0 16px;
 
     .works-cards {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
     }
 
     .works-card {
-      width: 650px;
       padding: 40px;
-    }
-  }
+      gap: 40px;
 
-  @media screen and (max-width: 1024px) {
-    .works-cards {
-      grid-template-columns: 1fr;
-      gap: 30px;
-      justify-items: center;
-    }
-
-    .works-card {
-      width: 500px;
-      padding: 35px;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    margin-bottom: 120px;
-
-    .works-card {
-      width: 85%;
-      padding: 30px;
-    }
-
-    .works-wrapper__title h2 {
-      font-size: 28px;
-      text-align: center;
-    }
-
-    .works-wrapper__title p {
-      font-size: 14px;
-      text-align: center;
-    }
-  }
-
-  @media screen and (max-width: 576px) {
-    .works-card {
-      width: 70%;
-      padding: 25px;
-    }
-
-    .works-wrapper__title h2 {
-      font-size: 24px;
-    }
-
-    .works-wrapper__title p {
-      font-size: 13px;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    .works-card {
-      width: 60%;
-      padding: 20px;
-    }
-
-    .works-wrapper__title h2 {
-      font-size: 22px;
-    }
-
-    .works-wrapper__title p {
-      font-size: 12px;
-    }
-  }
-
-  @media screen and (max-width: 390px) {
-    .works-card {
-      width: 50%;
-      padding: 15px;
-    }
-
-    .works-wrapper__title h2 {
-      font-size: 20px;
-    }
-
-    .works-wrapper__title p {
-      font-size: 11px;
-    }
-
-    .works-card-link a {
-      padding: 14px 18px;
-      font-size: 16px;
+      &__img > img {
+        max-width: 500px;
+      }
     }
   }
 }
 
+@include mobile() {
+  .works-wrapper {
+    padding: 0 8px;
 
+    .works-cards {
+      grid-template-columns: 1fr !important;
+      gap: 16px;
+    }
+
+    .works-card {
+      padding: 20px;
+      gap: 20px;
+
+      &__img > img {
+        max-width: 100%;
+      }
+
+      &__info h3 {
+        font-size: 20px;
+      }
+
+      &__info p {
+        font-size: 16px;
+      }
+
+      .works-card-link a {
+        font-size: 16px;
+        padding: 12px 20px;
+      }
+    }
+
+    &__link a {
+      font-size: 16px;
+      padding: 12px 20px;
+    }
+  }
+}

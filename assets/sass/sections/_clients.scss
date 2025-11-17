@@ -1,4 +1,6 @@
+@use "../mixins/media-mixsins" as *;
 @use "../abstrats/mixins" as *;
+
 .clients {
   margin-bottom: 150px;
 
@@ -24,8 +26,7 @@
       justify-items: center;
 
       .clients-card {
-        width: 512px;
-        height: 542px;
+        width: 100%;
         background: linear-gradient(
             180deg,
             rgba(32, 32, 32, 0.2) 0%,
@@ -49,8 +50,9 @@
         }
 
         &__img {
-          width: 356px;
-          height: 138px;
+          max-width: 356px;
+          width: 100%;
+          margin: 0 auto;
 
           img {
             width: 100%;
@@ -81,138 +83,23 @@
       }
     }
   }
-
-
-  @media screen and (max-width: 1280px) {
-    margin-bottom: 130px;
-
-    .clients-cards {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .clients-card {
-      width: 450px;
-      height: auto;
-      padding: 80px 40px 60px;
-    }
-
-    .clients-card__img {
-      width: 300px;
-      height: auto;
-    }
-  }
-
-
-  @media screen and (max-width: 1024px) {
-    .clients-cards {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-
-    .clients-card {
-      width: 400px;
-      padding: 70px 35px 50px;
-    }
-
-    .clients-card__img {
-      width: 250px;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    margin-bottom: 120px;
-
-    .clients-cards {
-      grid-template-columns: 1fr;
-      gap: 30px;
-      justify-items: center;
-    }
-
-    .clients-card {
-      width: 85%;
-      padding: 60px 30px 40px;
-    }
-
-    .clients-card__img {
-      width: 220px;
-    }
-
-    .clients-title h2 {
-      font-size: 28px;
-      text-align: center;
-    }
-
-    .clients-title p {
-      font-size: 14px;
-      text-align: center;
-    }
-  }
-
-
-  @media screen and (max-width: 576px) {
-    margin-bottom: 110px;
-
-    .clients-card {
-      width: 90%;
-      padding: 50px 20px 30px;
-    }
-
-    .clients-card__img {
-      width: 180px;
-    }
-
-    .clients-title h2 {
-      font-size: 24px;
-    }
-
-    .clients-title p {
-      font-size: 13px;
-    }
-  }
-
-
-  @media screen and (max-width: 480px) {
-    margin-bottom: 100px;
-
-    .clients-card {
-      width: 95%;
-      padding: 40px 15px 25px;
-    }
-
-    .clients-card__img {
-      width: 160px;
-    }
-
-    .clients-title h2 {
-      font-size: 22px;
-    }
-
-    .clients-title p {
-      font-size: 12px;
-    }
-  }
-
-
-  @media screen and (max-width: 390px) {
-    margin-bottom: 90px;
-
-    .clients-card {
-      width: 100%;
-      padding: 30px 10px 20px;
-    }
-
-    .clients-card__img {
-      width: 140px;
-    }
-
-    .clients-title h2 {
-      font-size: 20px;
-    }
-
-    .clients-title p {
-      font-size: 11px;
-    }
-  }
 }
+@include laptop() {
+    .clients {
+      .clients-wrapper {
+        .clients-cards {
+         grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
 
+  @include mobile() {
+    .clients {
+      .clients-wrapper {
+        .clients-cards {
+         grid-template-columns: 1fr;
+        }
+      }
+    }
+  }

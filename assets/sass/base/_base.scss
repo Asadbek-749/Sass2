@@ -1,3 +1,4 @@
+@use "../mixins/media-mixsins" as *;
 * {
   margin: 0;
   padding: 0;
@@ -12,42 +13,21 @@ body {
 }
 
 .container {
-  max-width: 1596px;
-  width: 100%;
+  max-width: 1598px;
   margin: 0 auto;
 
+  border: 1px solid red;
+  background: rgb(21, 21, 86);
 
-  @media screen and (max-width: 1440px) {
-    padding: 0 100px;
+  @include laptop() {
+    max-width: 1280px;
+    background: red;
   }
 
-
-  @media screen and (max-width: 1280px) {
-    padding: 0 80px;
-  }
-
-
-  @media screen and (max-width: 1024px) {
-    padding: 0 60px;
-  }
-
-  @media screen and (max-width: 768px) {
-    padding: 0 40px;
-  }
-
-
-  @media screen and (max-width: 576px) {
-    padding: 0 20px;
-  }
-
-
-  @media screen and (max-width: 480px) {
-    padding: 0 15px;
-  }
-
-
-  @media screen and (max-width: 390px) {
-    padding: 0 10px;
+  @include mobile() {
+    max-width: 768px;
+    padding: 16px;
+    background: green;
   }
 }
 
